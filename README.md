@@ -1,2 +1,2 @@
-# C-Programming-Practice
+# C-Projects
 The Projects That i Have Build during my College's 1st Year.

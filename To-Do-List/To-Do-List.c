@@ -1,3 +1,13 @@
+/*
+    To-Do List -
+    This is a simple To-Do List application in C. It allows users to add, delete, and view tasks. The application is designed to be straightforward and easy to use, with a simple menu-driven interface.
+    
+        1. The user can add tasks to the list, with a maximum of 5 tasks.
+        2. The user can delete tasks by specifying the task number, and the list will automatically shift remaining tasks up to fill the gap.
+        3. The user can view the current list of tasks at any time.
+        4. The user can exit the application with a confirmation prompt to prevent accidental exits.
+
+*/
 #include<stdio.h>
 #include<string.h>
 

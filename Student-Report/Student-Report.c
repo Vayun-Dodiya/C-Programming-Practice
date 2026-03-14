@@ -1,7 +1,13 @@
 /*
-    This code is still in under manegment !!!
-    Deveploped & Designed By Vayun(just to practice FILE IO.)
-    this projects is under management because of a feture is going to be added which will help to edit the details of the students
+this is a simple C program that allows users to manage student details. It provides functionalities to add, view, and remove student information. The program uses a structure to store student details and file handling to save and retrieve data from a text file.
+Key features of the program include:
+    1. Adding Student Details: Users can input student information such as name, address, division, semester, and enrollment number. The details are then saved to a text file in a specific format.
+    2. Viewing Student Details: Users can search for a student by name, and if found, the program displays the corresponding details from the text file.
+    3. Removing Student Details: Users can delete a student's information by searching for their name
+         The program reads the existing data from the text file, removes the matching record, and updates the file accordingly.
+    4. User Interface: The program provides a simple command-line interface for users to interact with the functionalities.
+
+    - By Vayun Dodiya 
 */
 
 #include <stdio.h>
@@ -10,7 +16,6 @@
 
 int fun();
 
-// TO store student's information 
 typedef struct student_info{
 
     unsigned long long enroll;
@@ -21,14 +26,13 @@ typedef struct student_info{
     
 }stinfo;
 
-void StuD(stinfo * sp); // to get information of the student
+void StuD(stinfo * sp);
 
-int format(FILE *,stinfo *,int); // transfers student's details to the file.txt
+int format(FILE *,stinfo *,int);
 
 
 int main(){
     
-    //can store details of 255 students.
     stinfo stud[255];
     stinfo * sp;
     int order;
@@ -38,20 +42,16 @@ int main(){
 
         sp = &stud[i];
 
-        fun(); // to print primary function of this program 
+        fun();
 
-        scanf("%d",&order);//takes input of what user wants to perform
-
-        //1. Add detail
+        scanf("%d",&order);
 
         if(order == 1){
-            //limts the program by 255
             if(i > 255){
                 printf("You cannot add more students. List is full.\n");
                 continue;
             }
             
-            //student details input
             printf("\nEnter Your Student Details Below:- \n");
             StuD(&stud[i]);
 
@@ -61,15 +61,12 @@ int main(){
             return 1;
             }
 
-            //prints the detials in a specific pattern / order in a text file.
             format(fp,sp,i);
             
             fclose(fp);
         
             i++;
         }
-
-        //2. View detail - By searching the name of the student.
 
         if(order == 2){
 
@@ -103,14 +100,11 @@ int main(){
         
             fclose(fp);
 
-            //prints an error statement if the searched name is not in the file.
             if(!found)
                 printf("Name '%s' not found in file.\n", searchName);
             
         }
         
-        //3. Rnemove detail - similar like searching but it store every other details in a deffernt file (not including the searched value) and then restores that all details in the main file
-
         if(order == 3){
             int found = 0;
             char to_delete[111],word[111];
@@ -118,7 +112,6 @@ int main(){
             int delete_note = 0;
             char remove_msg;
 
-            //file open : - 
             FILE * fp = fopen("file.txt","r");
             if(fp == NULL){
                 printf("FILE not found\n");
@@ -163,7 +156,6 @@ int main(){
             fclose(fp);
             fclose(test);
 
-            //stores the info in the main file again with excluding the searched details or values which are going to be deleted.
             
             test = fopen("test.txt","r");
             if(test == NULL){
@@ -184,7 +176,6 @@ int main(){
             fclose(fp);
             fclose(test);
 
-            //check if the deletation is completed
             if(delete_note){
                 printf("Target Deleted. ");
                 printf("Want to Delete The Delete massage ? (y/n) : ");
@@ -193,7 +184,7 @@ int main(){
             else
                 printf("Target Not Found. ");
             
-            if (remove_msg == 'y' || remove_msg == 'Y'){//asks if the operator wants to delete the msg which was placed after the value is deleted
+            if (remove_msg == 'y' || remove_msg == 'Y'){
             
                 FILE * fp = fopen("file.txt","r");
                 if(fp == NULL){
@@ -255,7 +246,6 @@ int main(){
             }
             
         }
-        //exits the execution 
         if(order >= 4 || order <= 0){
             break;
         }

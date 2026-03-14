@@ -1,13 +1,14 @@
 /*
-this is a simple C program that allows users to manage student details. It provides functionalities to add, view, and remove student information. The program uses a structure to store student details and file handling to save and retrieve data from a text file.
-Key features of the program include:
-    1. Adding Student Details: Users can input student information such as name, address, division, semester, and enrollment number. The details are then saved to a text file in a specific format.
-    2. Viewing Student Details: Users can search for a student by name, and if found, the program displays the corresponding details from the text file.
-    3. Removing Student Details: Users can delete a student's information by searching for their name
-         The program reads the existing data from the text file, removes the matching record, and updates the file accordingly.
-    4. User Interface: The program provides a simple command-line interface for users to interact with the functionalities.
+    Student-report.c -
+    This is a simple C program that allows users to manage student details. It provides functionalities to add, view, and remove student information. The program uses a structure to store student details and file handling to save and retrieve data from a text file.
 
-    - By Vayun Dodiya 
+        1. Adding Student Details: Users can input student information such as name, address, division, semester, and enrollment number. The details are then saved to a text file in a specific format.
+        2. Viewing Student Details: Users can search for a student by name, and if found, the program displays the corresponding details from the text file.
+        3. Removing Student Details: Users can delete a student's information by searching for their name
+            The program reads the existing data from the text file, removes the matching record, and updates the file accordingly.
+        4. User Interface: The program provides a simple command-line interface for users to interact with the functionalities.
+
+          - By Vayun Dodiya 
 */
 
 #include <stdio.h>

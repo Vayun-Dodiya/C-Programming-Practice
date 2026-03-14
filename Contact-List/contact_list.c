@@ -1,14 +1,16 @@
 /*
-this is a contact list program in C that allows users to manage their contacts. The program provides the following functionalities:
-1. List All Contacts: Displays all the contacts stored in the file.
-2. Add Contacts: Allows the user to add a new contact by entering the name and number. The contact is then saved to a file.
-3. Search Contacts: Enables the user to search for a contact by name and displays the contact
-    information if found.
-4. Edit Contacts: Allows the user to edit an existing contact's name or number.
-5. Remove Contacts: Enables the user to delete a contact from the list.
-6. Close the Program: Exits the program.
+    Contact List Management System in C -
+    This is a simple contact list management system implemented in C. It allows users to add, view, search, edit, and delete contacts stored in a text file. The program provides a command-line interface for users to interact with the functionalities.
 
-The program uses a structured format to store contact information in a text file, making it easy to read and manage. It also includes input validation for phone numbers and handles file operations for reading and writing contact data.
+        1. List All Contacts: Displays all the contacts stored in the file.
+        2. Add Contacts: Allows the user to add a new contact by entering the name and number. The contact is then saved to a file.
+        3. Search Contacts: Enables the user to search for a contact by name and displays the contact
+            information if found.
+        4. Edit Contacts: Allows the user to edit an existing contact's name or number.
+        5. Remove Contacts: Enables the user to delete a contact from the list.
+        6. Close the Program: Exits the program.
+
+          - The program uses a structured format to store contact information in a text file, making it easy to read and manage. It also includes input validation for phone numbers and handles file operations for reading and writing contact data.
 */
 
 #include <stdio.h>

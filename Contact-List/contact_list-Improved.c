@@ -1,3 +1,16 @@
+/*
+this is a contact list program in C that allows users to manage their contacts. The program provides the following functionalities:
+1. List All Contacts: Displays all the contacts stored in the file.
+2. Add Contacts: Allows the user to add a new contact by entering the name and number. The contact is then saved to a file.
+3. Search Contacts: Enables the user to search for a contact by name and displays the contact
+    information if found.
+4. Edit Contacts: Allows the user to edit an existing contact's name or number.
+5. Remove Contacts: Enables the user to delete a contact from the list.
+6. Close the Program: Exits the program.
+
+The program uses a structured format to store contact information in a text file, making it easy to read and manage. It also includes input validation for phone numbers and handles file operations for reading and writing contact data.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,11 +36,8 @@ int main()
     {
         if (i >= 5)
         {
-            // (CouI*) realloc(cont, ConI * sizeof(cont));
             CI = (ConI *)malloc(i * sizeof(ConI));
         }
-        // open the file and reads all the character and prints on the console or terminal(contacts in a specific formet)
-        // Completed
         if (op == 1)
         {
             char str[100];
@@ -39,8 +49,6 @@ int main()
             fclose(fp);
         }
 
-        // Add Number
-        //  Under Work - Pending 99%
         if (op == 2)
         {
             int valid;
@@ -85,12 +93,9 @@ int main()
             formet_con_(fp, CI);
 
             fclose(fp);
-            // printf("Under Constraction : sorry");
             i++;
-            // break;
         }
 
-        // Remove Contacts: - Not Stared
         if (op == 3)
         {
             char searchName[100];
@@ -144,13 +149,10 @@ int main()
             if (!found)
                 printf("Name '%s' not found in file.\n", searchName);
 
-            // break;
         }
 
-        // Edit Contacts: - Not Started
         if (op == 4)
         {
-            // printf("Under Constraction : sorry");
             char searchName[100];
             printf("Enter the Contact Name to delete: ");
             scanf(" %99[^\n]", searchName);
@@ -253,9 +255,7 @@ int main()
             }
             remove("contact_list.copilat-ai-improved.txt");
             rename("temp.txt", "contact_list.copilat-ai-improved.txt");
-            break;
         }
-        // Edit Contacts: - Not Started
         if (op == 5)
         {
             int edit;
@@ -409,10 +409,8 @@ int main()
                 printf("Unexpected error: Contact not found during update.\n");
                 remove("temp.txt");
             }
-            break;
         }
 
-        // Close the Program - Complete
         if (op == 6)
         {
             printf("Thank You For Being with Us.");
@@ -420,7 +418,6 @@ int main()
         }
         if (op != 6)
             op = con_fun();
-        // i++;
     }
     if (CI != &Cont[0]) free(CI);
     return 0;
@@ -462,5 +459,4 @@ void Lower(ConI *CI)
             CI->Name[i] += 32;
         }
     }
-    // printf("%s\n", CI->Name);
 }
